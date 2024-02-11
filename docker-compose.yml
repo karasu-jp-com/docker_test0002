@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  app001:
+    container_name: app002
+    hostname: app002
+    build: .
+    # command: sh -c "npm update; npm start"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ./:/usr/app002/
+    ports:
+      - 8001:3001
+    tty: true
